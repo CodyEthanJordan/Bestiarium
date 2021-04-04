@@ -1,6 +1,8 @@
 {
     "monsters" : [
         {
+            "id" :"9ea96f70-5b3a-4fbe-8bcb-cd0974633c96", 
+            "version" : 0,
             "name" : "Wretched Aqrabuamelu",
             "size" : "large",
             "type" : "monsterous humanoid",
