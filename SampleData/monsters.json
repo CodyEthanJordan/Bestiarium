@@ -1,0 +1,58 @@
+{
+    "monsters" : [
+        {
+            "name" : "Wretched Aqrabuamelu",
+            "size" : "large",
+            "type" : "monsterous humanoid",
+            "subtype" : "sands beast",
+            "alignment" : "neutral evil",
+            "CR" : 4,
+            "AC" : {
+                "value" : 16,
+                "details" : {
+                    "dex" : 2,
+                    "natural" : 5,
+                    "size" : -1
+                }
+            },
+            "HP" : {
+                "value" : 37,
+                "notes" : 65
+            },
+            "speed" : {
+                "base" : 40
+            },
+            "fortitudeSave" : 2,
+            "reflexSave" : 6,
+            "willSave" : 4,
+            "abilityScores" : {
+                "str" : 18,
+                "dex" : 14,
+                "con" : 12,
+                "int" : 4,
+                "wis" : 10,
+                "cha" : 16
+            },
+            "attacks" : [
+                "claws TODO"
+            ],
+            "feats" : ["multiattack", "improved initiative", "combat reflexes"],
+            "BAB" : 5,
+            "special abilities" : [
+                {
+                    "name" : "String",
+                    "description" : "Aqrabuamelu venom simply dissolves flesh. Creatures failing the save suffer 2d6 damage and 2 points of strength damage." 
+                },
+                {
+                    "name" : "Terrifying Gaze",
+                    "description" : "Gaze attack, fear effect. Will save DC $WisSave or become shaken while in aqrabuamelu’s presence"
+                }
+            ]
+
+            
+        }
+    ]
+    
+
+    
+}

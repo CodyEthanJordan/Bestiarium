@@ -1,0 +1,24 @@
+{
+   "types": [
+        {
+            "name" : "dragon",
+            "hitDie" : 10,
+            "fortitudeSave" : "good",
+            "reflexSave" : "bad",
+            "willSave" : "good",
+            "baseAttackBonus" : "good",
+            "skillRanks" : 6,
+            "notes" : "dragon immunities"
+        },
+        {
+            "name" : "undead",
+            "hitDie" : 8,
+            "fortitudeSave" : "bad",
+            "reflexSave" : "bad",
+            "willSave" : "good",
+            "baseAttackBonus" : "average",
+            "skillRanks" : 4,
+            "notes" : "cha to hp TODO"
+        }
+   ] 
+}
