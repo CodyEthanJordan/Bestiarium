@@ -1,6 +1,6 @@
 import {Switch, Route} from 'react-router-dom'
 
-import Main from './components/Main'
+import MainComponent from './components/MainComponent'
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Switch>
 
         <Route exact path='/'>
-          <Main/>
+          <MainComponent/>
         </Route>
 
       </Switch>

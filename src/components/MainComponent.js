@@ -1,6 +1,23 @@
 import styled from 'styled-components'
 
-const Page = styled.div``
+import {monsters} from '../SampleData/monsters'
+import {sizes} from '../SampleData/sizes'
+import {types} from '../SampleData/types'
+
+import MainStats from './statCats/MainStats'
+import Defense from './statCats/Defense'
+import Offense from './statCats/Offense'
+import Statistics from './statCats/Statistics'
+import Special from './statCats/Special'
+import Ecology from './statCats/Ecology'
+
+const CenterPage = styled.div`
+    display:flex;
+    justify-content: center;
+`
+const Page = styled.div`
+    width: 50%;
+`
 const FlexDiv = styled.div`
     display: flex;
 `
@@ -17,33 +34,30 @@ const StatsDiv = styled.div``
 const StatDiv = styled(FlexDiv)``
 const EditHP = styled.button``
 
-const samplecreature = {
-    "hitdie": 10,
-    "type": "dragon",
-    "size": {
-        "size": "small",
-        "modifier": .5
-    }
-}
+const NameAndAttackDiv = styled(FlexDiv)`
+    background-color: #CFE2F3;
+    font-size: 2rem;
+    font-weight: bold;
+    justify-content: space-between;
+`
+const NAADTitle = styled.h2``
+const NAADDetail = styled.h3``
 
-// const types = {
-//     [
-//         name: dragon,
-//         modifier: 4
-//     ]
-// }
 
-const Main = () => {
+const MainComponent = () => {
+
+    // console.log(types)
 
     return (
+        <CenterPage>
         <Page>
-            <NameDiv>
+            {/* <NameDiv>
                 <Text>Name:</Text>
                 <Name
                     type="text"
                     placeholder="Dragon"
                     name="name"
-                    value= {samplecreature.type}
+                    value= {monsters[0].name}
                 />
                 <Text>Unique?</Text>
                 <UniqueCheck
@@ -57,12 +71,28 @@ const Main = () => {
                     name="type"
                 >
                     <option value=''>---Select---</option>
+                    {types.map(type => {
+                        return (
+                            <option value={type.name}>
+                                {type.name}
+                            </option>
+                        )
+                    })}
                 </Type>
                 <Text>Size:</Text>
                 <Size
                     name="size"
+                    value={monsters[0].size}
                 >
                     <option value=''>---Select---</option>
+                    {sizes.map(size => {
+                        return (
+                            <option value={size.name}>
+                                {size.name}
+                            </option>
+                        )
+                    })
+                    }
                 </Size>
             </TypeSizeDiv>
             <HDDiv>
@@ -82,6 +112,7 @@ const Main = () => {
                         name="strength"
                         placeholder="4"
                         min="0"
+                        value= {monsters[0].abilityScores.str}
                     />
                 <Text>[Weak to legendary scale button presets]</Text>
                 </StatDiv>
@@ -92,6 +123,7 @@ const Main = () => {
                         name="dexterity"
                         placeholder="4"
                         min="0"
+                        value= {monsters[0].abilityScores.dex}
                     />
                 <Text>[Weak to legendary scale button presets]</Text>
                 </StatDiv>
@@ -102,6 +134,7 @@ const Main = () => {
                         name="constitution"
                         placeholder="4"
                         min="0"
+                        value= {monsters[0].abilityScores.con}
                     />
                 <Text>[Weak to legendary scale button presets]</Text>
                 </StatDiv>
@@ -112,6 +145,7 @@ const Main = () => {
                         name="intelligence"
                         placeholder="4"
                         min="0"
+                        value= {monsters[0].abilityScores.int}
                     />
                 <Text>[Weak to legendary scale button presets]</Text>
                 </StatDiv>
@@ -122,6 +156,7 @@ const Main = () => {
                         name="wisdom"
                         placeholder="4"
                         min="0"
+                        value= {monsters[0].abilityScores.wis}
                     />
                 <Text>[Weak to legendary scale button presets]</Text>
                 </StatDiv>
@@ -132,11 +167,12 @@ const Main = () => {
                         name="charisma"
                         placeholder="4"
                         min="0"
+                        value= {monsters[0].abilityScores.cha}
                     />
                 <Text>[Weak to legendary scale button presets]</Text>
                 </StatDiv>
                 <StatDiv>
-                    <Text>HP (static number that can be changed)</Text>
+                    <Text>{monsters[0].HP.value}</Text>
                     <EditHP>Edit</EditHP>
                 </StatDiv>
             </StatsDiv>
@@ -145,9 +181,23 @@ const Main = () => {
             </Text>
             <Text>
                 Ex. Dragon has D10 HD - 6HD dragon has 6x (5.5+const modifier) HP
-            </Text>
+            </Text> */}
+
+            <NameAndAttackDiv>
+                <NAADTitle>Balor</NAADTitle>
+                <NAADDetail>CR 20</NAADDetail>
+            </NameAndAttackDiv>
+
+            <MainStats/>
+            <Defense/>
+            <Offense/>
+            <Statistics/>
+            <Special/>
+            <Ecology/>
+
         </Page>
+        </CenterPage>
     )
 }
 
-export default Main
+export default MainComponent
